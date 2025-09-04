@@ -97,7 +97,6 @@ body {
   background-color: #333;
   padding: 50px 30px 15px;
   position: relative;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   color: #ddd6ce;
 }
 
@@ -122,12 +121,17 @@ body {
 }
 
 .left {
-  width: 50%;
+  width: 70%;
+}
+
+.middle {
 }
 
 .middle, .right {
-    
-  width: 25%;
+  align-items: right;
+  align-content: right;
+  margin-top: 90px;
+  width: 15%;
 }
 
 .logo {
@@ -165,25 +169,28 @@ body {
   color: #ddd6ce;
 }
 
-/* Footer content som inneholder de to link-kolonnene */
 .footer-content {
   padding: 95px 200px 0 0;
-  flex: 1 1 1;           /* Fyll opp resten av plassen */
+  flex: 1 1 1;          
   display: flex;
-  justify-content: space-between;  /* Lik avstand mellom link-kolonnene */
-  gap: 416px;                     /* God avstand mellom kolonnene */
+  justify-content: space-between;  
+  gap: 416px;                     
 }
 
-/* Hver link-kolonne */
-.footer-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1 1 0; /* La kolonnene dele plassen likt */
-  max-width: 45%; /* Maks bredde for å gi plass til gap */
+.icon-text.column {
+    float: right;
+    width: 100%;
+    display: block;
+}
+
+.line {
+    float: right;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .title-small {
+  float: right;
   color: #ddd6ce;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -193,13 +200,24 @@ body {
   line-height: 16px;
 }
 
+.footer-end {
+    background: #333;
+}
+
 .footer-link {
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 16px;
   text-decoration: none;
   color: #ddd6ce;
-  transition: color 0.3s ease;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
 }
 
 .footer-link:hover {
