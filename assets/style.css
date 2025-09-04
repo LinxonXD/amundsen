@@ -1,8 +1,8 @@
-    body {
-      background-color: #f5efe8;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
+body {
+  background-color: #f5efe8;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .navbar {
   display: flex;
@@ -10,7 +10,7 @@
   background-color: #f8f8f8;
   border-bottom: 1px solid #ddd;
   padding: 0 20px;
-  position: relative; /* Viktig for absolutt posisjonering av meny */
+  position: relative;
   z-index: 10;
 }
 
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
   position: relative;
 }
 
@@ -31,10 +31,20 @@
   overflow: hidden;
 }
 
+.logo-container h1 {
+  text-transform: uppercase;
+  color: #5b5963;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .logo-container img {
   display: block;
-  height: 80px;
   width: auto;
+  height: 45px;
+  vertical-align: bottom;
+  border: 0;
 }
 
 .nav-links {
@@ -47,7 +57,7 @@
   text-transform: uppercase;
   color: #5b5963;
   font-size: 16px;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -71,7 +81,168 @@
   color: #333;
 }
 
+.wrapper-content {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  box-sizing: border-box; /* Viktig så padding ikke øker bredden */
+}
+
+
+/* Footer styling */
+.footer {
+  background-color: #333;
+  padding: 50px 30px 15px;
+  position: relative;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  color: #ddd6ce;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.row {
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 50%;
+}
+
+.middle, .right {
+    
+  width: 25%;
+}
+
+.logo {
+  max-width: 416px;
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px; /* <-- Legg til denne linjen for vertikal avstand */
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: 65px;
+  vertical-align: bottom;
+  border: 0;
+}
+
+.icon-text {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-text i {
+  color: #ddd6ce;
+  min-width: 20px;
+  text-align: center;
+}
+
+.icon-text a {
+  text-decoration: none;
+  color: #ddd6ce;
+}
+
+/* Footer content som inneholder de to link-kolonnene */
+.footer-content {
+  padding: 95px 200px 0 0;
+  flex: 1 1 1;           /* Fyll opp resten av plassen */
+  display: flex;
+  justify-content: space-between;  /* Lik avstand mellom link-kolonnene */
+  gap: 416px;                     /* God avstand mellom kolonnene */
+}
+
+/* Hver link-kolonne */
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 0; /* La kolonnene dele plassen likt */
+  max-width: 45%; /* Maks bredde for å gi plass til gap */
+}
+
+.title-small {
+  color: #ddd6ce;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.footer-link {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ddd6ce;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-divider {
+  background-color: #fff;
+  max-width: 1250px;
+  height: 1px;
+  margin: 70px auto 15px;
+  margin-top: 0!important;
+}
+
+.footer-copyright {
+  background-color: #333;
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+  margin: 0 auto 0px;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right img {
+  height: 80px;
+  display: block;
+  border: 0;
+}
+
 /* === Mobilvisning === */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -112,5 +283,16 @@
   .nav-links a.active {
     background-color: #20386e;
     color: white;
+  }
+  
+  /* Footer - stack kolonner på mobil */
+  .wrapper-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
   }
 }
